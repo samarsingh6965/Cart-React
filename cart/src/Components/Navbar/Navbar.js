@@ -1,28 +1,37 @@
-import React from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import NavCart from "../NavCart/NavCart";
+import { useState } from "react";
 
-function Navbar() {
+function Navbar({data}) {
+  const [toggle , setToggle] = useState(false)
+  console.log(data)
+  const click = () =>{
+    setToggle(!toggle)
+  }
+  
   return (
     <>
-      <nav className="w-full sticky top-0 flex justify-between h-14 border bg-orange-500">
+      <nav className="w-full sticky top-0 flex justify-between h-14 border bg-blue-500 text-white">
         <ul className="flex leading-[56px] gap-4 text-xl pl-1">
           <li>
-            <a>Home</a>
+            <Link>Home</Link>
           </li>
           <li>
-            <a>About</a>
+            <Link>About</Link>
           </li>
           <li>
-            <a>Contact US</a>
+            <Link>Contact US</Link>
           </li>
         </ul>
-        <div className="flex gap-2">
-          <span>
-            <AiOutlineShoppingCart className="text-3xl h-14 py-auto"/>
-          </span>
-          <p className="border px-4 py-4">66</p>
+        <div className="flex gap-2 relative mr-4">
+          <button onClick={click} className="px-2 flex gap-3 text-xl items-center">
+            <AiOutlineShoppingCart className="text-3xl h-14 py-auto"/>Cart
+          </button>
+          <p className="bg-red-500 text-white flex justify-center border-black border px-2 w-6 h-6 rounded-full absolute top-1 left-7">{data.length}</p>
         </div>
       </nav>
+      {toggle === true ?  <NavCart data={data}/>: null}
     </>
   );
 }

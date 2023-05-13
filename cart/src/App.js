@@ -1,14 +1,15 @@
+import { useState } from 'react';
 import './App.css';
-import CartBar from './Components/CartBar/CartBar';
 import Navbar from './Components/Navbar/Navbar';
 import Products from './Components/Products/Products';
 
+
 function App() {
+  const [data, setData] = useState([])
   return (
     <>
-    <Navbar/>
-    <Products/>
-    <CartBar/>
+        <Navbar data={data}/>
+        <Products data={data} setData={setData}/>
     </>
   );
 }
