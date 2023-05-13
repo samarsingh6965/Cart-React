@@ -8,7 +8,7 @@ function App() {
   const [data, setData] = useState([])
   return (
     <>
-        <Navbar data={data}/>
+        <Navbar data={data} setData={setData}/>
         <Products data={data} setData={setData}/>
     </>
   );

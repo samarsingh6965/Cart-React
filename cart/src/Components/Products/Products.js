@@ -8,7 +8,10 @@ import product6 from '../../Assets/download (1).jpeg';
 import product7 from '../../Assets//download (2).jpeg';
 import product8 from '../../Assets/download (3).jpeg';
 import product9 from '../../Assets/download (4).jpeg';
-import {AiOutlineShoppingCart} from 'react-icons/ai'
+import { AiOutlineShoppingCart, AiOutlineHeart, AiFillHeart,AiFillStar,AiOutlineStar } from 'react-icons/ai';
+import {BsStarHalf} from 'react-icons/bs'
+import { useState } from 'react';
+
 
 
 const ProList = [{
@@ -112,17 +115,27 @@ const ProList = [{
 {
     id: 15,
     img: product3,
-    name: 'HPLaptop',
+    name: 'HP Laptop',
+    description: 'Lorem ipsum iusto expedita impedit hic dolorum saepe unde suscipit esse! Deserunt',
+    price: '1,20,000',
+},
+{
+    id: 16,
+    img: product3,
+    name: 'HP Laptop',
     description: 'Lorem ipsum iusto expedita impedit hic dolorum saepe unde suscipit esse! Deserunt',
     price: '1,20,000',
 }]
 function Products({ setData, data }) {
 
-
     const AddToCart = (e) => {
         setData([...data, e])
     }
-
+    const [toggleIcon, setToggleIcon] = useState(false)
+    const handleFav = () => {
+        setToggleIcon(!toggleIcon)
+        console.log(toggleIcon)
+    }
 
 
     return (
@@ -130,18 +143,24 @@ function Products({ setData, data }) {
             <div className="flex justify-center  flex-wrap gap-5 ">
                 {ProList.map(e => (
                     <div className="w-[300px] min-w-[300px] rounded-md border p-1" key={e.id}>
-                        <img src={e.img} alt="img" className='h-[300px] border p-3' />
-                        <div className="px-2 flex flex-col gap-2">
-                            <p className='text-2xl font-serif leading-10'>{e.name}</p>
-                            <p className='leading-6 h-12 overflow-y-clip'>{e.description}</p>
-                            <p className='text-xl leading-10'>Rs. {e.price}</p>
+                        <div className="relative">
+                            <img src={e.img} alt="img" className='h-[300px] border p-3' />
+                            {toggleIcon === true ? <AiFillHeart onClick={handleFav} className='text-red-500 absolute top-2 right-2 cursor-pointer text-lg'/> : <AiOutlineHeart onClick={handleFav} className='text-red-500 absolute top-2 right-2 cursor-pointer text-lg' />}
                         </div>
-                        <div className="flex justify-between px-2">
-                            <button onClick={() => AddToCart(e)} className='bg-orange-500 justify-center flex w-[49%] rounded-md px-4 py-2 gap-1 text-white'>Add <AiOutlineShoppingCart className='text-xl'/></button>
-                            <button onClick={() => AddToCart(e)} className='bg-orange-500 justify-center flex w-[49%] rounded-md px-4 py-2 gap-1 text-white'>Buy Now</button>
+                        <div className="px-2 flex flex-col gap-2">
+                            <i className='flex py-2 text-orange-500 text-lg'><AiFillStar/><AiFillStar/><AiFillStar/><BsStarHalf className='text-base'/><AiOutlineStar/></i>
+                            <p className='text-2xl font-serif'>{e.name}</p>
+                            <p className='leading-6 h-12 overflow-y-clip'>{e.description}</p>
+                            <p className='text-xl leading-10'>Rs. {e.price}<span className='pl-2 text-green-500 text-sm'>50% off</span></p>
+                        </div>
+                        <div className="flex justify-between px-2 py-2">
+                            <button onClick={() => AddToCart(e)} className='bg-orange-500 justify-center flex w-[49%] rounded-md px-4 py-2 gap-1 text-white'>Add <AiOutlineShoppingCart className='text-xl' /></button>
+                            <button className='bg-orange-500 justify-center flex w-[49%] rounded-md px-4 py-2 gap-1 text-white'>Buy Now</button>
                         </div>
                     </div>
+
                 ))}
+
             </div>
         </>
     )

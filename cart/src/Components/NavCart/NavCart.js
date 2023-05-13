@@ -1,9 +1,11 @@
-import React from 'react'
 import { MdDelete } from 'react-icons/md'
 import cartEmpty from '../../Assets/empty.png'
 
-const NavCart = ({ data }) => {
-
+const NavCart = ({ data , setData}) => {
+    const handleRemove = (e) => {
+        setData([data.splice(e),e])
+        console.log(data)
+    }
     return (
         <>
             {/* cart Bar Started  */}
@@ -16,7 +18,7 @@ const NavCart = ({ data }) => {
                                 <div className=" w-[50%] h-[140px] leading-10 relative">
                                     <h1 className=' font-semibold'>{e.name}</h1>
                                     <p className=" font-semibold">Rs. {e.price}</p>
-                                    <MdDelete className='text-3xl absolute top-0 right-2 cursor-pointer'/>
+                                    <MdDelete onClick={() => handleRemove(e)} className='text-3xl absolute top-0 right-2 cursor-pointer'/>
                                 </div>
                             </div>
                         </div>
