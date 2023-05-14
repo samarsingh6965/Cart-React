@@ -11,7 +11,7 @@ function Navbar({data,setData}) {
   
   return (
     <>
-      <nav className="w-full sticky top-0 flex justify-between z-20 h-14 border bg-blue-500 text-white">
+      <nav className="w-full sticky top-0 flex justify-between z-20 h-14 bg-blue-500 text-white">
         <ul className="flex leading-[56px] gap-4 text-xl pl-1">
           <li>
             <Link>Home</Link>

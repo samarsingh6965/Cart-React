@@ -130,7 +130,6 @@ function Products({ setData, data }) {
     const [toggleIcon, setToggleIcon] = useState(ProList)
     const AddToCart = (e) => {
         setData([...data, e])
-        
     }
 
     const toggle = (e) => {
