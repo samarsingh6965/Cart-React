@@ -127,15 +127,17 @@ const ProList = [{
     price: '1,20,000',
 }]
 function Products({ setData, data }) {
-
+    const [toggleIcon, setToggleIcon] = useState(ProList)
     const AddToCart = (e) => {
         setData([...data, e])
+        
     }
-    const [toggleIcon, setToggleIcon] = useState(false)
-    const handleFav = () => {
-        setToggleIcon(!toggleIcon)
-        console.log(toggleIcon)
+
+    const toggle = (e) => {
+        e.toggle  = ! e.toggle
+        setToggleIcon([...toggleIcon])
     }
+    
 
 
     return (
@@ -145,10 +147,10 @@ function Products({ setData, data }) {
                     <div className="w-[300px] min-w-[300px] rounded-md border p-1" key={e.id}>
                         <div className="relative">
                             <img src={e.img} alt="img" className='h-[300px] border p-3' />
-                            {toggleIcon === true ? <AiFillHeart onClick={handleFav} className='text-red-500 absolute top-2 right-2 cursor-pointer text-lg'/> : <AiOutlineHeart onClick={handleFav} className='text-red-500 absolute top-2 right-2 cursor-pointer text-lg' />}
+                            <i className='absolute top-2 right-2 cursor-pointer' onClick={()=>toggle(e)}>{e.toggle? <AiFillHeart  className='text-red-500 text-lg' />:<AiOutlineHeart  className='text-red-500 text-lg'/>}</i>
                         </div>
                         <div className="px-2 flex flex-col gap-2">
-                            <i className='flex py-2 text-orange-500 text-lg'><AiFillStar/><AiFillStar/><AiFillStar/><BsStarHalf className='text-base'/><AiOutlineStar/></i>
+                            <i className='flex py-2 text-orange-500 text-lg' ><AiFillStar/><AiFillStar/><AiFillStar/><BsStarHalf className='text-base'/><AiOutlineStar/></i>
                             <p className='text-2xl font-serif'>{e.name}</p>
                             <p className='leading-6 h-12 overflow-y-clip'>{e.description}</p>
                             <p className='text-xl leading-10'>Rs. {e.price}<span className='pl-2 text-green-500 text-sm'>50% off</span></p>
@@ -160,8 +162,9 @@ function Products({ setData, data }) {
                     </div>
 
                 ))}
-
+  
             </div>
+            
         </>
     )
 }
