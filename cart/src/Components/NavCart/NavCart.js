@@ -1,5 +1,6 @@
 import { MdDelete } from 'react-icons/md'
 import cartEmpty from '../../Assets/empty.png'
+import {HiOutlinePlusSm,HiOutlineMinusSm} from 'react-icons/hi'
 
 const NavCart = ({ data, setData }) => {
     const handleRemove = (e) => {
@@ -39,9 +40,9 @@ const NavCart = ({ data, setData }) => {
                                         <p className=" font-semibold">Rs. {e.price}<span className='pl-2 text-green-500 text-xs'>50% off</span></p>
                                         <MdDelete onClick={() => handleRemove(e.id)} className='text-3xl absolute top-0 right-2 cursor-pointer' />
                                         <div className="flex items-center gap-1">
-                                            <button onClick={() => handleMinus(e)} className='px-4 text-3xl border rounded-md'>-</button>
-                                            <p className='w-7 h-7 flex items-center justify-center border rounded-full'>{e.Qty}</p>
-                                            <button onClick={() => handlePlus(e)} className='px-4 text-3xl border rounded-md'>+</button>
+                                            <button onClick={() => handleMinus(e)} className=' text-3xl rounded-md shadow shadow-slate-400'><HiOutlineMinusSm/></button>
+                                            <p className='w-7 h-7 flex items-center justify-center p-1 border rounded-full'>{e.Qty}</p>
+                                            <button onClick={() => handlePlus(e)} className='text-3xl rounded-md shadow shadow-slate-400'><HiOutlinePlusSm/></button>
                                         </div>
                                     </div>
                                 </div>

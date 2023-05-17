@@ -30,9 +30,9 @@ function Products({ setData, data ,Product}) {
 
     return (
         <>
-            <div className="flex justify-center flex-wrap gap-5">
-                {Product.map(e => (
-                    <div className="w-[300px] min-w-[300px] rounded-md border p-1" key={e.id}>
+            <div className="flex justify-center flex-wrap gap-5 pt-4">
+                {Product.length === 0 ? <p className='mt-4 text-4xl max-md:text-lg max-sm:text-base font-serif'>Nothing to show in this Category :</p>:Product.map(e => (
+                    <div className="w-[350px] max-[375px]:w-[280px] min-w-[300px]] rounded-md border p-1" key={e.id}>
                         <div className="relative">
                             <img src={e.img} alt="img" className='h-[300px] w-full border p-3' />
                             <i className='absolute top-2 right-2 cursor-pointer' onClick={() => toggle(e)}>{e.toggle ? <AiFillHeart className='text-red-500 text-lg' /> : <AiOutlineHeart className='text-red-500 text-lg' />}</i>

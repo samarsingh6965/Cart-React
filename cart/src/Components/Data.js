@@ -1,3 +1,9 @@
+import {AiOutlineLaptop} from 'react-icons/ai';
+import {TbToolsKitchen2,TbArmchair2} from 'react-icons/tb';
+import {CgAppleWatch} from 'react-icons/cg';
+import {BsFillUsbPlugFill} from 'react-icons/bs';
+import {FaMobileAlt} from 'react-icons/fa';
+import {GiClothes} from 'react-icons/gi'
 import product1 from '../Assets/ideapad.webp';
 import product2 from '../Assets/l2.jpg';
 import product3 from '../Assets/l3.jpg';
@@ -31,6 +37,16 @@ import e5 from '../Assets/e5.webp';
 import e6 from '../Assets/e6.webp';
 import e7 from '../Assets/e7.webp';
 import e8 from '../Assets/e8.webp';
+import d1 from '../Assets/d1.webp'
+import d2 from '../Assets/d2.webp'
+import d3 from '../Assets/d3.webp'
+import d4 from '../Assets/d4.webp'
+import d5 from '../Assets/d5.webp'
+import d6 from '../Assets/d6.webp'
+import d7 from '../Assets/d7.webp'
+import d8 from '../Assets/d8.webp'
+import d9 from '../Assets/d9.webp'
+import d10 from '../Assets/d10.webp'
 
 
 
@@ -433,29 +449,142 @@ export const ProductList = [
         price: 290,
         Qty: 1
     },
+    {
+        id: 45,
+        category: 'fashion',
+        img: d1,
+        name: 'Dress 1',
+        description: 'Lorem ipsum expedita impedit hic dolorum saepe unde suscipit esse! Deserunt',
+        price: 290,
+        Qty: 1
+    },
+    {
+        id: 46,
+        category: 'fashion',
+        img: d2,
+        name: 'Dress 2',
+        description: 'Lorem ipsum expedita impedit hic dolorum saepe unde suscipit esse! Deserunt',
+        price: 290,
+        Qty: 1
+    },
+    {
+        id: 47,
+        category: 'fashion',
+        img: d3,
+        name: 'Dress 3',
+        description: 'Lorem ipsum expedita impedit hic dolorum saepe unde suscipit esse! Deserunt',
+        price: 290,
+        Qty: 1
+    },
+    {
+        id: 48,
+        category: 'fashion',
+        img: d4,
+        name: 'Dress 4',
+        description: 'Lorem ipsum expedita impedit hic dolorum saepe unde suscipit esse! Deserunt',
+        price: 290,
+        Qty: 1
+    },
+    {
+        id: 49,
+        category: 'fashion',
+        img: d5,
+        name: 'Dress 5',
+        description: 'Lorem ipsum expedita impedit hic dolorum saepe unde suscipit esse! Deserunt',
+        price: 290,
+        Qty: 1
+    },
+    {
+        id: 50,
+        category: 'fashion',
+        img: d6,
+        name: 'Dress 6',
+        description: 'Lorem ipsum expedita impedit hic dolorum saepe unde suscipit esse! Deserunt',
+        price: 290,
+        Qty: 1
+    },
+    {
+        id: 51,
+        category: 'fashion',
+        img: d7,
+        name: 'Dress 7',
+        description: 'Lorem ipsum expedita impedit hic dolorum saepe unde suscipit esse! Deserunt',
+        price: 290,
+        Qty: 1
+    },
+    {
+        id: 52,
+        category: 'fashion',
+        img: d8,
+        name: 'Dress 8',
+        description: 'Lorem ipsum expedita impedit hic dolorum saepe unde suscipit esse! Deserunt',
+        price: 290,
+        Qty: 1
+    },
+    {
+        id: 53,
+        category: 'fashion',
+        img: d9,
+        name: 'Dress 9',
+        description: 'Lorem ipsum expedita impedit hic dolorum saepe unde suscipit esse! Deserunt',
+        price: 290,
+        Qty: 1
+    },
+    {
+        id: 54,
+        category: 'fashion',
+        img: d10,
+        name: 'Dress 10',
+        description: 'Lorem ipsum expedita impedit hic dolorum saepe unde suscipit esse! Deserunt',
+        price: 290,
+        Qty: 1
+    },
     
 ]
+
 
 
 export const Categories = [
     {
         id: 1,
+        icon:<AiOutlineLaptop/>,
         Name: 'Laptop',
         Url: 'laptop'
     },
     {
         id: 2,
+        icon:<TbToolsKitchen2/>,
         Name: 'Kitchen',
         Url: 'kitchen'
     },
     {
         id: 3,
+        icon:<CgAppleWatch/>,
         Name: 'Watch',
         Url: 'watch'
     },
     {
         id: 4,
+        icon:<BsFillUsbPlugFill/>,
         Name: 'Electronics',
         Url: 'electronics'
+    },
+    {
+        id: 5,
+        icon:<FaMobileAlt/>,
+        Name: 'Mobiles',
+        Url: 'moblies'
+    },
+    {
+        id: 6,
+        icon:<GiClothes/>,
+        Name: 'Fashion',
+        Url: 'fashion'
+    },
+    {
+        id: 7,
+        icon:<TbArmchair2/>,
+        Name: 'Furniture',
+        Url: 'furniture'
     },
 ]
