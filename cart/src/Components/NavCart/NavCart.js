@@ -14,7 +14,7 @@ const NavCart = ({ data, setData }) => {
         }
         setData([...data])
     }
-
+    
     const handlePlus = (e) => {
         e.Qty = e.Qty + 1
         if (e.Qty >= 5) {
@@ -22,7 +22,8 @@ const NavCart = ({ data, setData }) => {
         }
         setData([...data])
     }
-
+    
+    
     return (
         <>
             {/* cart Bar Started  */}

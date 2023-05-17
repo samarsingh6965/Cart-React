@@ -5,6 +5,7 @@ import { useState } from "react";
 
 function Navbar({data,setData}) {
   const [toggle , setToggle] = useState(false)
+  
   const click = () =>{
     setToggle(!toggle)
   }
